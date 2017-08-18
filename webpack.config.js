@@ -28,5 +28,8 @@ module.exports = {
         new HtmlwebpackPlugin({
             title: 'react-redux-router-webpack'
         })
-    ]
+    ],
+    devServer: {
+        historyApiFallback: true
+    }
 }

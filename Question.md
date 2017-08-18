@@ -21,7 +21,8 @@ react在遍历时，需要给children的key赋值，便于children的区分
 this.props没有text（reducer中的initState没有定义text属性）
 
 7.BrowserRouter的子路径404问题
-BroswerRouter是需要服务端配合的，服务端重定向到首页
+解决方法一：BroswerRouter是需要服务端配合的，服务端重定向到首页（上线）
+解决方法二：在webpack.config.js中加devServer参数，并设定其属性historyApiFallback: true（本地）
 
 
 8.HashRouter不能重复点击一个子路径问题

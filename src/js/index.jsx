@@ -15,7 +15,7 @@ const leaf = document.querySelector('body').appendChild(document.createElement('
 
 render(
     <Provider store={store}>
-        <HashRouter>
+        <BrowserRouter>
             <div>
                 <ul className="chooseAbled">
                     <li><Link to="/" >List</Link></li>
@@ -24,7 +24,7 @@ render(
                 <Route exact path="/" component={List}></Route>
                 <Route path="/form" component={Form}></Route>
             </div>
-        </HashRouter>
+        </BrowserRouter>
     </Provider>
     ,leaf
 )
