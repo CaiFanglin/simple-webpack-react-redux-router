@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as act from '../Actions/actions.js'
+import * as act from '../Actions/actions.js';
+import PubSub from 'pubsub-js';
 
 const propTypes = {
     list: PropTypes.array.isRequired
@@ -12,6 +13,11 @@ const propTypes = {
 class List extends React.Component {
     constructor (props) {
         super(props)
+    }
+
+    componentDidMount () {
+        const Topic = 'justMessage';
+        PubSub.publish(Topic, 'haha,我是一条message');
     }
 
     render () {

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Input from './Input.jsx';
 import Btn from './Btn.jsx';
-import { chanInput, chanBtn } from '../Actions/actions.js'
+import { chanInput, chanBtn } from '../Actions/actions.js';
 
 // const propTypes = {
 //     state : PropTypes.object.isRequired,

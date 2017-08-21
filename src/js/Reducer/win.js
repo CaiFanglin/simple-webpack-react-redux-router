@@ -5,6 +5,7 @@ const initState = {
 }
 
 export default function win (state = initState, action) {
+    console.log(Object.assign({}, state, action.item));
     switch (action.type) {
         case constant.WIN_TYPE:
             return (Object.assign({}, state, action.item));

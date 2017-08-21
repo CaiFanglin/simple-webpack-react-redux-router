@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import PropTypes from 'prop-types';
+import PubSub from 'pubsub-js';
 
 const propTypes = {
     item: PropTypes.object.isRequired,
@@ -11,6 +12,19 @@ const propTypes = {
 export default class Btn extends React.Component {
     constructor (props) {
         super(props)
+    }
+
+    componentDidMount () {
+        let Topic = 'justMessage';
+        PubSub.subscribe(Topic, (msg, data) => {
+            this.props.onclick({
+                "text": data
+            })
+        });
+    }
+
+    componentWillUnMount () {
+        PubSub.clearAllSubscriptions();
     }
 
     render () {

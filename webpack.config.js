@@ -1,4 +1,5 @@
 var path = require('path');
+var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -16,15 +17,13 @@ module.exports = {
             },
             {
                 test: /\.jsx?$/,
-                loader: 'babel-loader',
+                loaders: ['react-hot-loader', 'babel-loader?presets[]=es2015,presets[]=react'],
                 include: path.resolve(__dirname, './src/js'),
-                query: {
-                    "presets": ["es2015", "react"]
-                }
             }
         ]
     },
     plugins: [
+        new webpack.BannerPlugin('版权所有，翻版必究'),
         new HtmlwebpackPlugin({
             title: 'react-redux-router-webpack'
         })
